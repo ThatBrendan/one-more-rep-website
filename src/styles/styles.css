@@ -1,0 +1,159 @@
+html {
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background-color: var(--black);
+}
+.fullpage {
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+:root {
+  --blue: #054aa9;
+  --green: #8b9556;
+  --white: #ffffff;
+  --red: #ee3438;
+  --black: #000000;
+  --orange: #bc5f04;
+  --brown: #9b7874;
+
+  --max-width: 1500px;
+  --navbar-height: 95px;
+}
+
+.no-style {
+  list-style: none;
+}
+.no-style li {
+  padding: 5px 0;
+}
+
+.blueButton {
+  border: 2px solid var(--blue);
+  padding: 2px 20px;
+  border-radius: 24px;
+  text-align: center;
+  color: var(--blue);
+}
+
+.blueButton:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+.orangeButton {
+  border: 2px solid var(--orange);
+  padding: 2px 20px;
+  border-radius: 24px;
+  text-align: center;
+  color: var(--orange);
+}
+.orangeButton:hover {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.whiteButton {
+  border: 2px solid var(--white);
+  padding: 10px 20px;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--bold-font);
+}
+
+.whiteButton:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+.v-toolbar__content,
+.v-toolbar__extension {
+  justify-content: space-around;
+}
+
+.whiteButton,
+.blueButton {
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.whiteButton > .v-btn__overlay,
+.blueButton > .v-btn__overlay {
+  /* hide v-btn overlay? */
+  --v-hover-opacity: 0;
+  --v-focus-opacity: 0;
+}
+
+.page-wrapper {
+  overflow: hidden;
+}
+
+.blur-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 5, 0.5);
+  backdrop-filter: blur(1px);
+}
+
+.animated {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.delay-1s {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+* {
+  overflow-wrap: break-word;
+}
+
+button,
+.blueButton,
+.whiteButton {
+  margin-right: 20px;
+}
+.heroImage {
+  height: 85vh;
+  width: 100vw;
+  overflow: hidden;
+}
