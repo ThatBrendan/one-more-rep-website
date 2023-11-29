@@ -3,9 +3,9 @@
     <v-navigation-drawer
       theme="dark"
       expand-on-hover
-      width="200"
+      v-model="drawer"
+      :rail="rail"
       app
-      rail
       permanent
     >
       <v-list>
@@ -13,6 +13,12 @@
           <v-list-item
             prepend-avatar="@\assets\brandLogo.png"
             title="One More Rep"
+            ><template v-slot:append>
+              <v-btn
+                variant="text"
+                icon="mdi-chevron-left"
+                @click.stop="rail = !rail"
+              ></v-btn> </template
           ></v-list-item>
         </router-link>
       </v-list>
@@ -30,6 +36,10 @@
 </template>
 
 <script lang="ts" setup>
+import { ref } from "vue";
+
+const drawer = ref(true);
+const rail = ref(true);
 const menu = [
   {
     title: "Home",

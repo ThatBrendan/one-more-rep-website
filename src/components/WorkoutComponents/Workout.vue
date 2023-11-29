@@ -1,5 +1,9 @@
 <template>
   <main>
-    <h2>WorkOut Page</h2>
+    <Essentials />
   </main>
 </template>
+
+<script lang="ts" setup>
+import Essentials from "./Essentials.vue";
+</script>

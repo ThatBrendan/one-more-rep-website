@@ -54,7 +54,7 @@ const offering = [
   text-align: center;
 }
 .offer-img {
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 .offer-img:hover {
   transform: scale(1.1);
