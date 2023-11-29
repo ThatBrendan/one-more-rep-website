@@ -28,7 +28,7 @@ import desktopBG from "../../assets/lifting.jpg";
     font-size: 1.2rem;
   }
   .header-item {
-    width: 100vw;
+    width: 90vw;
     padding: 0 2rem;
   }
 }
