@@ -71,6 +71,5 @@ const menu = [
 <style>
 main {
   min-height: 100vh;
-  width: 95vw;
 }
 </style>

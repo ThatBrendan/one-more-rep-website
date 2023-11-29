@@ -1,10 +1,10 @@
 <template>
-  <div class="mt-4 row">
-    <h2 class="text-center mb-4">Essential Workouts</h2>
+  <div class="mt-4 row workout-section">
+    <h2 class="text-center mb-4 h3">Essential Workouts</h2>
     <div
       v-for="(w, index) in workout"
       :key="index"
-      class="workout-container col-12 col-lg-4 pa-2"
+      class="workout-container pa-2 col-12 col-lg-4"
     >
       <div class="workout-inner">
         <img
@@ -58,6 +58,9 @@ const workout = [
 </script>
 
 <style>
+.workout-section{
+  padding: 0 1rem;
+}
 .workout-container {
   text-align: center;
   margin: 0.5rem 0;
@@ -88,11 +91,11 @@ const workout = [
   margin: 0 1rem;
   filter: sepia(3%) invert(19%);
 }
-.workout-inner{
+.workout-inner {
   position: relative;
   min-height: 300px;
-  width: 95%;
-  margin: 0 1.5rem;
+  width: 100%;
+  margin: 0 1rem;
 }
 
 @media screen and (max-width: 767px) {
@@ -104,6 +107,9 @@ const workout = [
   }
   .h3 {
     font-size: 24px;
+  }
+  .workout-inner{
+    margin: 0;
   }
 }
 </style>
