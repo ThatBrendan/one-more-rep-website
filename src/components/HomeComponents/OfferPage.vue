@@ -3,70 +3,45 @@
     <h2 class="section-title">What we offer</h2>
     <div class="col-12 col-6 row pa-8 card-section">
       <v-card
-        v-for="(o, index) in offering"
+        v-for="o in offering"
         :key="o.title"
-        max-width="400"
+        max-width="420"
+        height="270"
+        class="offer-img"
         color="black"
+        :to="{ name: o.path }"
       >
-        <v-img :src="o.src" class="mb-2" height="300"></v-img>
-        <div class="pt-2">
-          <p class="large">{{ o.title }}</p>
-          <p>{{ o.subtitle }}</p>
-          <v-card-actions class="ma-0 pa-0">
-            <v-btn color="orange-lighten-2" variant="text"> More </v-btn>
-
-            <v-spacer></v-spacer>
-
-            <v-btn
-              :icon="cards[index] ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-              @click="toggleCards(index)"
-            ></v-btn>
-          </v-card-actions>
-        </div>
-
-        <v-expand-transition>
-          <div v-show="cards[index]">
-            <v-divider></v-divider>
-            <v-card-text>
-              {{ o.text }}
-            </v-card-text>
-          </div>
-        </v-expand-transition>
+        <v-img
+          :src="o.src"
+          class="mb-2 align-end"
+          gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
+          ><v-card-title>{{ o.title }}</v-card-title></v-img
+        >
       </v-card>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
 import mealprep from "../../assets/meal-prep.jpg";
 import barbell from "../../assets/barbell.jpg";
 import workout from "../../assets/workout.jpg";
-
-const cards = ref([false, false, false]);
-
-const toggleCards = (index: any) => {
-  cards.value[index] = !cards.value[index];
-};
 
 const offering = [
   {
     src: workout,
     title: "Workouts",
-    subtitle: "Skipping leg day?",
-    text: "Struggling on structuring your workouts? Look no further.",
+    path: "Workout",
   },
   {
     src: mealprep,
     title: "Quality Meal-Preps",
-    subtitle: "Trying to get the best out of your meals?",
-    text: "We provide the best of meal preps irregardless of your dietary",
+    path: "Meal-Prep",
   },
   {
     src: barbell,
     title: "Equipments",
-    subtitle: "Looking to take workout further?",
-    text: "One more rep will suggest workout equipments to help you make the right decisions",
+    path: "Equipments",
   },
 ];
 </script>
@@ -77,6 +52,12 @@ const offering = [
 }
 .section-title {
   text-align: center;
+}
+.offer-img {
+  transition: 0.3s;
+}
+.offer-img:hover {
+  transform: scale(1.1);
 }
 @media screen and (max-width: 767px) {
   h2 {

@@ -4,7 +4,7 @@
       theme="dark"
       expand-on-hover
       width="200"
-      class="black"
+      app
       rail
       permanent
     >
@@ -13,7 +13,6 @@
           <v-list-item
             prepend-avatar="@\assets\brandLogo.png"
             title="One More Rep"
-            subtitle="Your go-to fitness app"
           ></v-list-item>
         </router-link>
       </v-list>
