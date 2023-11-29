@@ -1,12 +1,12 @@
 <template>
-  <div class="mt-4">
-    <h2 class="text-center">Essential Workouts</h2>
-    <div class="col-12 row pa-8">
-      <div
-        v-for="(w, index) in workout"
-        :key="index"
-        class="workout-container col-6"
-      >
+  <div class="mt-4 row">
+    <h2 class="text-center mb-4">Essential Workouts</h2>
+    <div
+      v-for="(w, index) in workout"
+      :key="index"
+      class="workout-container col-12 col-lg-4 pa-2"
+    >
+      <div class="workout-inner">
         <img
           :src="w.src"
           :alt="w.title"
@@ -15,7 +15,7 @@
           class="workout-image"
         />
         <div class="workout-title">
-          <p class="text-white">{{ w.title }}</p>
+          <p class="h3 white-text">{{ w.title }}</p>
         </div>
       </div>
     </div>
@@ -60,10 +60,12 @@ const workout = [
 <style>
 .workout-container {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 0.5rem 0;
   position: relative;
   min-height: 300px;
   height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 .workout-title {
   position: absolute;
@@ -71,8 +73,7 @@ const workout = [
   left: 0;
   right: 0;
   z-index: 10;
-  padding: 5rem 0;
-  pointer-events: none;
+  padding: 7rem 0;
 }
 .workout-image {
   position: absolute;
@@ -81,10 +82,28 @@ const workout = [
   left: 0;
   right: 0;
   object-fit: cover;
-  object-position: top;
   width: 100%;
   height: 100%;
   z-index: -1;
   margin: 0 1rem;
+  filter: sepia(3%) invert(19%);
+}
+.workout-inner{
+  position: relative;
+  min-height: 300px;
+  width: 95%;
+  margin: 0 1.5rem;
+}
+
+@media screen and (max-width: 767px) {
+  .workout-container {
+    min-height: 190px;
+  }
+  .workout-title {
+    padding: 4.5rem 0;
+  }
+  .h3 {
+    font-size: 24px;
+  }
 }
 </style>
