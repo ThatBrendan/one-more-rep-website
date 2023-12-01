@@ -58,7 +58,7 @@ const workout = [
 </script>
 
 <style>
-.workout-section{
+.workout-section {
   padding: 0 1rem;
 }
 .workout-container {
@@ -108,7 +108,7 @@ const workout = [
   .h3 {
     font-size: 24px;
   }
-  .workout-inner{
+  .workout-inner {
     margin: 0;
   }
 }

@@ -1,0 +1,24 @@
+{
+  "Aerobics": [
+    "Jogging",
+    "Jmup rope",
+    "Swimming",
+    "Jumping Jacks",
+    "Squat jumps"
+  ],
+  "Yoga": [
+    "Bridge pose",
+    "Low Lunge",
+    "Standing Forward Bend",
+    "Downward facing dog"
+  ],
+  "Cardio": ["Burpee", "Mountain Climbers", "Rowing", "Cycling"],
+  "Strength-Chest": [
+    "Bench press",
+    "Cable Chest Press",
+    "Close grip benc press",
+    "Dumbell Floor Press",
+    "Incline push up",
+    "Kneeling Incline Push-Up"
+  ]
+}

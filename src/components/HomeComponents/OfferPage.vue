@@ -13,6 +13,7 @@
       >
         <v-img
           :src="o.src"
+          cover
           class="mb-2 align-end"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
           ><v-card-title>{{ o.title }}</v-card-title></v-img
@@ -58,6 +59,9 @@ const offering = [
 }
 .offer-img:hover {
   transform: scale(1.1);
+}
+.offerImg img {
+  object-fit: cover !important;
 }
 @media screen and (max-width: 767px) {
   h2 {
