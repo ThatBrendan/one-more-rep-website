@@ -6,16 +6,16 @@
       :key="index"
       class="workout-container pa-2 col-12 col-lg-4"
     >
+      <img
+        :src="`/workout/${w.workoutSegment}.jpg`"
+        :alt="`${w.workoutSegment} workout image`"
+        width=""
+        height=""
+        class="workout-image"
+      />
       <div class="workout-inner">
-        <img
-          :src="w.src"
-          :alt="w.title"
-          width=""
-          height=""
-          class="workout-image"
-        />
         <div class="workout-title">
-          <p class="h3 white-text">{{ w.title }}</p>
+          <p class="h3 white-text text-capitalize">{{ w.workoutSegment }}</p>
         </div>
       </div>
     </div>
@@ -23,38 +23,38 @@
 </template>
 
 <script lang="ts" setup>
-import aerobics from "../../assets/aerobics.jpg";
-import yoga from "../../assets/yoga.jpg";
-import cardio from "../../assets/cardio.jpg";
-import strength from "../../assets/strength.jpg";
-import crossfit from "../../assets/crossfit.jpg";
-import core from "../../assets/core.jpg";
-const workout = [
-  {
-    src: aerobics,
-    title: "Aerobics",
-  },
-  {
-    src: yoga,
-    title: "Yoga",
-  },
-  {
-    src: cardio,
-    title: "Cardio",
-  },
-  {
-    src: strength,
-    title: "Strength",
-  },
-  {
-    src: crossfit,
-    title: "CrossFit",
-  },
-  {
-    src: core,
-    title: "Core",
-  },
-];
+import { onMounted, ref } from "vue";
+
+interface WorkoutItems {
+  workoutSegment: string;
+  workouts: string[];
+}
+
+const workout = ref<WorkoutItems[]>([]);
+const apiURL = "http://localhost:5126/api/WorkoutApp/GetWorkout";
+
+const getWorkOut = async () => {
+  try {
+    const response = await fetch(apiURL, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    if (!response.ok) {
+      throw new Error(`Http error ${response.status}`);
+    }
+
+    const data: [] = await response.json();
+    workout.value = data;
+  } catch (error) {
+    console.error("Error fetching workout", error);
+  }
+};
+
+onMounted(() => {
+  getWorkOut();
+});
 </script>
 
 <style>
