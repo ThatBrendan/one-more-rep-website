@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 row workout-section">
+  <div class="mt-4 row workout-section" :loading="loadingVariable">
     <h2 class="text-center mb-4 h3">Essential Workouts</h2>
     <div
       v-for="(w, index) in workout"
@@ -30,6 +30,8 @@ interface WorkoutItems {
   workouts: string[];
 }
 
+const loadingVariable = ref(true);
+
 const workout = ref<WorkoutItems[]>([]);
 const apiURL = "http://localhost:5126/api/WorkoutApp/GetWorkout";
 
@@ -47,6 +49,7 @@ const getWorkOut = async () => {
 
     const data: [] = await response.json();
     workout.value = data;
+    loadingVariable.value = false;
   } catch (error) {
     console.error("Error fetching workout", error);
   }

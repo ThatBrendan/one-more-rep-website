@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
             string connectionString = _configuration.GetConnectionString("onemorerepCon");
             var client = new MongoClient(connectionString);
             var database = client.GetDatabase("onemorerep");
-            var collection = database.GetCollection<BsonDocument>("onemorerepapp");
+            var collection = database.GetCollection<BsonDocument>("exercises");
 
             var filter = Builders<BsonDocument>.Filter.Empty;
 
@@ -42,6 +42,7 @@ namespace WebApplication1.Controllers
                 string? v = document["_id"].ToString();
                 resultDictionary["id"] = v;
                 resultDictionary["workoutSegment"] = document["workout-segment"].AsString;
+                resultDictionary["workouts-section"] = document["workouts"].AsString;
 
                 var workoutsArray = document["workouts"].AsBsonArray;
                 var workoutList = workoutsArray.Select(x => x.ToString()).ToList();
