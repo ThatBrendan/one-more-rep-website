@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts" setup>
-import ref from
+import { ref, Ref } from "vue";
 import workoutJSON from "../../data/workout.json";
 
 interface WorkoutItems {
@@ -31,7 +31,7 @@ interface WorkoutItems {
   "workout-plans": string[];
 }
 
-const workout = ref<WorkoutItems[]>(workoutJSON.categories);
+const workout = (Ref<WorkoutItems[]> = ref(workoutJSON.categories));
 </script>
 
 <style>
