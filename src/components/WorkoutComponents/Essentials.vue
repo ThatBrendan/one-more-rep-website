@@ -6,18 +6,20 @@
       :key="index"
       class="workout-container col-12 col-lg-4"
     >
-      <img
-        :src="`../../../public/workout/${w.Title}.jpg`"
-        :alt="`${w['Title']} workout image`"
-        width=""
-        height=""
-        class="workout-image"
-      />
-      <div class="workout-inner">
-        <div class="workout-title">
-          <p class="h3 white-text text-capitalize">{{ w["Title"] }}</p>
+      <router-link :to="{ name: 'WorkoutDetail', params: { title: w.Title } }">
+        <img
+          :src="`../../../public/workout/${w.Title}.jpg`"
+          :alt="`${w['Title']} workout image`"
+          width=""
+          height=""
+          class="workout-image"
+        />
+        <div class="workout-inner">
+          <div class="workout-title">
+            <p class="h3 white-text text-capitalize">{{ w["Title"] }}</p>
+          </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
