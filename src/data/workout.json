@@ -1,27 +1,38 @@
 {
-  "Aerobics": [
-    "Jogging",
-    "Jmup rope",
-    "Swimming",
-    "Jumping Jacks",
-    "Squat jumps"
-  ],
-  "Yoga": [
-    "Bridge pose",
-    "Low Lunge",
-    "Standing Forward Bend",
-    "Downward facing dog"
-  ],
-  "Cardio": ["Burpee", "Mountain Climbers", "Rowing", "Cycling"],
-  "Strength-Chest": [
-    "Bench press",
-    "Cable Chest Press",
-    "Close grip benc press",
-    "Dumbell Floor Press",
-    "Incline push up",
-    "Kneeling Incline Push-Up"
-  ],
-  "Crossfit": [
-    ""
+  "categories": [
+    {
+      "Title": "Aerobics",
+      "workout-plans": [
+        "Jogging",
+        "Jmup rope",
+        "Swimming",
+        "Jumping Jacks",
+        "Squat jumps"
+      ]
+    },
+    {
+      "Title": "Yoga",
+      "workout-plans": [
+        "Bridge pose",
+        "Low Lunge",
+        "Standing Forward Bend",
+        "Downward facing dog"
+      ]
+    },
+    {
+      "Title": "Cardio",
+      "workout-plans": ["Burpee", "Mountain Climbers", "Rowing", "Cycling"]
+    },
+    {
+      "Title": "Strength-Chest",
+      "workout-plans": [
+        "Bench press",
+        "Cable Chest Press",
+        "Close grip benc press",
+        "Dumbell Floor Press",
+        "Incline push up",
+        "Kneeling Incline Push-Up"
+      ]
+    }
   ]
 }

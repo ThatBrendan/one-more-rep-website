@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-4 row workout-section" :loading="loadingVariable">
+  <div class="mt-4 row workout-section">
     <h2 class="text-center mb-4 h3">Essential Workouts</h2>
     <div
       v-for="(w, index) in workout"
@@ -7,15 +7,15 @@
       class="workout-container pa-2 col-12 col-lg-4"
     >
       <img
-        :src="`/workout/${w.workoutSegment}.jpg`"
-        :alt="`${w.workoutSegment} workout image`"
+        :src="`/workout/${w.Title}.jpg`"
+        :alt="`${w['Title']} workout image`"
         width=""
         height=""
         class="workout-image"
       />
       <div class="workout-inner">
         <div class="workout-title">
-          <p class="h3 white-text text-capitalize">{{ w.workoutSegment }}</p>
+          <p class="h3 white-text text-capitalize">{{ w["Title"] }}</p>
         </div>
       </div>
     </div>
@@ -23,41 +23,15 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, ref } from "vue";
+import ref from
+import workoutJSON from "../../data/workout.json";
 
 interface WorkoutItems {
-  workoutSegment: string;
-  workouts: string[];
+  Title: string;
+  "workout-plans": string[];
 }
 
-const loadingVariable = ref(true);
-
-const workout = ref<WorkoutItems[]>([]);
-const apiURL = "http://localhost:5126/api/WorkoutApp/GetWorkout";
-
-const getWorkOut = async () => {
-  try {
-    const response = await fetch(apiURL, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (!response.ok) {
-      throw new Error(`Http error ${response.status}`);
-    }
-
-    const data: [] = await response.json();
-    workout.value = data;
-    loadingVariable.value = false;
-  } catch (error) {
-    console.error("Error fetching workout", error);
-  }
-};
-
-onMounted(() => {
-  getWorkOut();
-});
+const workout = ref<WorkoutItems[]>(workoutJSON.categories);
 </script>
 
 <style>
