@@ -1,0 +1,20 @@
+{
+  "categories": [
+    {
+      "Title": "30 Day Ab Challenge",
+      "photo": "abs-challenge"
+    },
+    {
+      "Title": "30 Day Fitness Challenge",
+      "photo": "fitness"
+    },
+    {
+      "Title": "30 Day Morning Workout Challenge",
+      "photo": "morning"
+    },
+    {
+      "Title": "The Daily 10 workout",
+      "photo": "daily-workout"
+    }
+  ]
+}
