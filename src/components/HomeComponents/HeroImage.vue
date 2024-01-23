@@ -1,5 +1,5 @@
 <template>
-  <v-img cover :src="desktopBG" class="heroImage">
+  <v-img cover :src="bg" class="heroImage">
     <div class="blur-overlay">
       <div class="row fill-height">
         <div class="col-12 white-text header-item pt-10">

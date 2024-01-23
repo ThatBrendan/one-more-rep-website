@@ -1,0 +1,22 @@
+[
+  {
+    "img": "@/assets/model.jpg",
+    "title": "Gym Wears",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id"
+  },
+  {
+    "img": "@/assets/kettlebars.jpg",
+    "title": "Home Equipments",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id"
+  },
+  {
+    "img": "@/assets/cable.jpg",
+    "title": "Workout Supplements",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id"
+  },
+  {
+    "img": "@/assets/side-cable.jpg",
+    "title": "Gym gadgets",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id"
+  }
+]
