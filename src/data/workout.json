@@ -44,7 +44,13 @@
       "Title": "Strength"
     },
     {
-      "Title": "Boxing"
+      "Title": "Boxing",
+      "workout-plans":[
+        "10 minutes jump rope",
+        "20 squats",
+        "20 push ups",
+        "30 crunches"
+      ]
     }
   ]
 }

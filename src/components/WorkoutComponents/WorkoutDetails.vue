@@ -1,10 +1,17 @@
 <template>
-  <div class="text-center">
-    <h2>{{ title }} workout plans</h2>
-    <ul>
-      <li v-for="(plan, index) in workoutPlans" :key="index">{{ plan }}</li>
-    </ul>
-  </div>
+  <main>
+    <div class="text-center">
+      <h2>{{ title }} workout plans</h2>
+      <ul>
+        <span>Warm Up:</span>
+        <li v-for="(plan, index) in workoutPlans" :key="index">{{ plan }}</li>
+      </ul>
+      <ul>
+        <span>Warm Up:</span>
+        <li v-for="(plan, index) in workoutPlans" :key="index">{{ plan }}</li>
+      </ul>
+    </div>
+  </main>
 </template>
 
 <script lang="ts" setup>

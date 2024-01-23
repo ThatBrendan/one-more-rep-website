@@ -2,19 +2,58 @@
   "categories": [
     {
       "Title": "30 Day Ab Challenge",
-      "photo": "abs-challenge"
+      "photo": "abs-challenge",
+      "workout-plans": [
+        "Jogging",
+        "Jmup rope",
+        "Swimming",
+        "Jumping Jacks",
+        "Squat jumps"
+      ]
     },
     {
       "Title": "30 Day Fitness Challenge",
-      "photo": "fitness"
+      "photo": "fitness",
+      "workout-plans": [
+        "Jogging",
+        "Jmup rope",
+        "Swimming",
+        "Jumping Jacks",
+        "Squat jumps"
+      ]
     },
     {
       "Title": "30 Day Morning Workout Challenge",
-      "photo": "morning"
+      "photo": "morning",
+      "workout-plans": [
+        "Jogging",
+        "Jmup rope",
+        "Swimming",
+        "Jumping Jacks",
+        "Squat jumps"
+      ]
     },
     {
       "Title": "The Daily 10 workout",
-      "photo": "daily-workout"
+      "photo": "daily-workout",
+      "workout-plans": [
+        "Jogging",
+        "Jmup rope",
+        "Swimming",
+        "Jumping Jacks",
+        "Squat jumps"
+      ]
+    },
+    {
+      "Title": "30 Mins Strength training",
+      "photo": "daily-workout",
+      "workout-plans": [
+        "Jogging",
+        "Jmup rope",
+        "Swimming",
+        "Jumping Jacks",
+        "Squat jumps"
+      ]
     }
   ]
 }

@@ -6,18 +6,22 @@
       :key="index"
       class="workout-container pa-2 col-12 col-lg-4"
     >
-      <img
-        :src="`/challenge/${c.photo}.jpg`"
-        :alt="`${c['Title']} workout`"
-        class="workout-image"
-      />
-      <div class="workout-inner">
-        <div class="workout-title">
-          <p class="h4 white-text text-capitalize">
-            {{ c["Title"] }}
-          </p>
+      <router-link
+        :to="{ name: 'ChallengesWorkout', params: { title: c.Title } }"
+      >
+        <img
+          :src="`/challenge/${c.photo}.jpg`"
+          :alt="`${c['Title']} workout`"
+          class="workout-image"
+        />
+        <div class="workout-inner">
+          <div class="workout-title">
+            <p class="h4 white-text text-capitalize">
+              {{ c["Title"] }}
+            </p>
+          </div>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
