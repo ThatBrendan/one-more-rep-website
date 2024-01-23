@@ -16,10 +16,26 @@
 
 <script lang="ts" setup>
 import desktopBG from "../../assets/lifting.jpg";
+import mobileBG from "../../assets/chin-up.jpg";
+import ResponsiveHelper from "../../helper/ResponsiveHelper";
+import { ref, watch } from "vue";
+
+const bg = ref(desktopBG);
+
+watch(
+  ResponsiveHelper.deviceType,
+  () => {
+    if (ResponsiveHelper.deviceType.value === "mobile") {
+      bg.value = mobileBG;
+    } else {
+      bg.value = desktopBG;
+    }
+  },
+  { immediate: true }
+);
 </script>
 
 <style scoped>
-
 @media screen and (max-width: 767px) {
   h2 {
     font-size: 2.5rem;
