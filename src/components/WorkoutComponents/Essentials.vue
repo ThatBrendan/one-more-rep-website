@@ -8,7 +8,7 @@
     >
       <router-link :to="{ name: 'WorkoutDetail', params: { title: w.Title } }">
         <img
-          :src="`../../../public/workout/${w.Title}.jpg`"
+          :src="`/workout/${w.Title}.jpg`"
           :alt="`${w['Title']} workout image`"
           width=""
           height=""
@@ -16,7 +16,7 @@
         />
         <div class="workout-inner">
           <div class="workout-title">
-            <p class="h3 white-text text-capitalize">{{ w["Title"] }}</p>
+            <p class="h4 white-text text-capitalize">{{ w["Title"] }}</p>
           </div>
         </div>
       </router-link>
@@ -36,4 +36,3 @@ interface WorkoutItems {
 const workout = ref<WorkoutItems[]>(workoutJSON.categories);
 </script>
 
-<style></style>

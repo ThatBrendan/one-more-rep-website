@@ -51,7 +51,7 @@
   --size: mobile;
 }
 
-/* stolen from Bootstrap - https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap.css */
+/* taken from Bootstrap - https://github.com/twbs/bootstrap/blob/main/dist/css/bootstrap.css */
 
 .visually-hidden,
 .visually-hidden-focusable:not(:focus):not(:focus-within) {

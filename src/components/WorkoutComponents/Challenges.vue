@@ -7,13 +7,13 @@
       class="workout-container pa-2 col-12 col-lg-4"
     >
       <img
-        :src="`../../../public/challenge/${c.photo}.jpg`"
+        :src="`/challenge/${c.photo}.jpg`"
         :alt="`${c['Title']} workout`"
         class="workout-image"
       />
       <div class="workout-inner">
         <div class="workout-title">
-          <p class="h3 white-text text-capitalize">
+          <p class="h4 white-text text-capitalize">
             {{ c["Title"] }}
           </p>
         </div>
@@ -26,10 +26,10 @@
 import { ref } from "vue";
 import challengesJSON from "../../data/challenges.json";
 
-interface challengesItem {
+interface ChallengesItems {
   Title: string;
   photo?: string;
 }
 
-const challenges = ref<challengesItem[]>(challengesJSON.categories);
+const challenges = ref<ChallengesItems[]>(challengesJSON.categories);
 </script>

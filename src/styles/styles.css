@@ -40,6 +40,9 @@ a {
 .no-style li {
   padding: 5px 0;
 }
+.black-bg {
+  background: var(--black);
+}
 
 .blueButton {
   border: 2px solid var(--blue);

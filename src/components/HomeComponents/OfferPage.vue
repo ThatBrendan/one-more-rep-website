@@ -57,9 +57,7 @@ const offering = [
 .offer-img {
   transition: all 0.3s ease-in-out;
 }
-.offer-img:hover {
-  transform: scale(1.1);
-}
+
 .offerImg img {
   object-fit: cover !important;
 }
