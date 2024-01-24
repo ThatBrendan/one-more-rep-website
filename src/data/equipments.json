@@ -1,6 +1,6 @@
 [
   {
-    "img": "/src/assets/gym-wears.jpg",
+    "img": "assets/gym-wears.jpg",
     "title": "Gym Wears",
     "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id"
   },
@@ -17,6 +17,11 @@
   {
     "img": "/src/assets/gym-gadgets.jpg",
     "title": "Gym gadgets",
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id"
+  },
+  {
+    "img": "/src/assets/massage-gun.jpg",
+    "title": "Recovery Equipments",
     "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore fuga voluptatum, iure corporis inventore praesentium nisi. Id"
   }
 ]

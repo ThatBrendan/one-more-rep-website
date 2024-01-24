@@ -99,7 +99,6 @@ main {
   color: var(--white);
 }
 .navbar {
-  border-bottom: solid 10px var(--blue);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
