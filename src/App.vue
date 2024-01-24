@@ -36,7 +36,7 @@
         <router-link
           :to="{ name: m.link }"
           class="h6 white-text"
-          @class="toggleNav"
+          @click="toggleNav"
           >{{ m.title }}</router-link
         >
       </p>
