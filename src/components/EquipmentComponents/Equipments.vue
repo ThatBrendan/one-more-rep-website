@@ -2,9 +2,14 @@
   <main>
     <ul class="slider" ref="slider">
       <li
-        v-for="i in items"
+        v-for="(i, index) in items"
         :key="i.title"
-        :style="'background: url(' + i.img + ')'"
+        :style="
+          'background: url(' +
+          i.img +
+          '); background-size: cover; background-position: center;'
+        "
+        :class="{ active: index === 1 }"
         class="item"
       >
         <div class="content">
@@ -16,19 +21,19 @@
     </ul>
     <nav class="nav">
       <button
-        class="btn whiteButton prev mdi mdi-skip-next"
-        @click="activate"
+        class="btn whiteButton prev mdi mdi-skip-previous"
+        @click="activate('prev')"
       ></button>
       <button
-        class="btn whiteButton next mdi mdi-skip-previous"
-        @click="activate"
+        class="btn whiteButton next mdi mdi-skip-next"
+        @click="activate('next')"
       ></button>
     </nav>
   </main>
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import equip from "../../data/equipments.json";
 
 interface Items {
@@ -40,26 +45,19 @@ interface Items {
 const items = ref<Items[]>(equip as Items[]);
 
 const slider = ref<HTMLElement | null>(null);
-onMounted(() => {
-  slider.value = document.querySelector(".slider");
-});
 
-function activate(e: MouseEvent) {
-  if (e.target instanceof Element) {
-    if (e.target.matches(".next")) {
-      items.value.push(items.value.shift()!);
-    } else if (e.target.matches(".prev")) {
-      items.value.unshift(items.value.pop()!);
-    }
+function activate(direction: string) {
+  if (direction === "next") {
+    items.value.push(items.value.shift()!);
+  } else if (direction === "prev") {
+    items.value.unshift(items.value.pop()!);
   }
 }
-
-document.addEventListener("click", activate, false);
 </script>
 
 <style scoped>
 .item {
-  width: 200px;
+  width: 250px;
   height: 300px;
   list-style-type: none;
   position: absolute;
@@ -67,8 +65,10 @@ document.addEventListener("click", activate, false);
   transform: translateY(-50%);
   z-index: 1;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
   transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
 
   &:nth-child(1),
@@ -106,12 +106,6 @@ document.addEventListener("click", activate, false);
   transform: translateY(-50%);
   opacity: 0;
   display: none;
-
-  & .description {
-    line-height: 1.7;
-    margin: 1rem 0 1.5rem;
-    font-size: 0.8rem;
-  }
 }
 
 .item:nth-of-type(2) .content {
