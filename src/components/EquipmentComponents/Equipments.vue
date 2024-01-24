@@ -1,46 +1,80 @@
 <template>
   <main>
-    <ul class="slider" ref="slider">
-      <li
-        v-for="(i, index) in items"
-        :key="i.title"
-        :style="
-          'background: url(' +
-          i.img +
-          '); background-size: cover; background-position: center;'
-        "
-        :class="{ active: index === 1 }"
-        class="item"
-      >
-        <div class="content">
-          <h2 class="title">{{ i.title }}</h2>
-          <p class="description">{{ i.description }}</p>
-          <button class="whiteButton">Read More</button>
-        </div>
-      </li>
-    </ul>
-    <nav class="nav">
-      <button
-        class="btn whiteButton prev mdi mdi-skip-previous"
-        @click="activate('prev')"
-      ></button>
-      <button
-        class="btn whiteButton next mdi mdi-skip-next"
-        @click="activate('next')"
-      ></button>
-    </nav>
+    <section>
+      <ul class="slider" ref="slider">
+        <li
+          v-for="(i, index) in items"
+          :key="i.title"
+          :style="
+            'background: url(' +
+            i.img +
+            '); background-size: cover; background-position: center;'
+          "
+          :class="{ active: index === 1 }"
+          class="item"
+        >
+          <div class="content">
+            <h2 class="title">{{ i.title }}</h2>
+            <p class="description">{{ i.description }}</p>
+            <button class="whiteButton">Shop here</button>
+          </div>
+        </li>
+      </ul>
+      <section class="controller">
+        <button
+          class="btn whiteButton prev mdi mdi-skip-previous"
+          @click="activate('prev')"
+        ></button>
+        <button
+          class="btn whiteButton next mdi mdi-skip-next"
+          @click="activate('next')"
+        ></button>
+      </section>
+    </section>
   </main>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import equip from "../../data/equipments.json";
+import gymwear from "../../assets/gym-wears.jpg";
+import supplements from "../../assets/supplements.jpg";
+import homeEquipments from "../../assets/kettlebars.jpg";
+import recoveryEquipments from "../../assets/massage-gun.jpg";
+import gymGadgets from "../../assets/gym-gadgets.jpg";
 
 interface Items {
   img: string;
   title: string;
   description: string;
 }
+
+const equip = [
+  {
+    img: gymwear,
+    title: "Gym Wears",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+  },
+  {
+    img: homeEquipments,
+    title: "Home Equipments",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+  },
+  {
+    img: supplements,
+    title: "Workout Supplements",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+  },
+  {
+    img: gymGadgets,
+    title: "Gym gadgets",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+  },
+  {
+    img: recoveryEquipments,
+    title: "Recovery Equipments",
+    description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit",
+  },
+];
 
 const items = ref<Items[]>(equip as Items[]);
 
@@ -124,7 +158,7 @@ function activate(direction: string) {
   }
 }
 
-.nav {
+section.controller {
   position: absolute;
   bottom: 2rem;
   left: 50%;

@@ -30,22 +30,26 @@
     </v-layout>
   </nav>
   <div class="mobile-nav container text-center">
-    <span class="close mb-10" @click="toggleNav">&times;</span>
-    <p v-for="m in menu" :key="m.title">
-      <router-link
-        :to="{ name: m.link }"
-        class="h6 white-text"
-        @class="toggleNav"
-        >{{ m.title }}</router-link
-      >
-    </p>
+    <div class="top-half">
+      <span class="close mb-10" @click="toggleNav">&times;</span>
+      <p v-for="m in menu" :key="m.title">
+        <router-link
+          :to="{ name: m.link }"
+          class="h6 white-text"
+          @class="toggleNav"
+          >{{ m.title }}</router-link
+        >
+      </p>
+    </div>
   </div>
   <router-view />
 </template>
 
 <script lang="ts" setup>
 import { RouterLink } from "vue-router";
+
 let open = false;
+
 function toggleNav() {
   open = !open;
 
@@ -55,6 +59,7 @@ function toggleNav() {
     document.body.classList.remove("open");
   }
 }
+
 const menu = [
   {
     title: "Home",
@@ -120,5 +125,8 @@ main {
 }
 .mobile-nav span {
   cursor: pointer;
+}
+img.companyLogo {
+  width: 70%;
 }
 </style>
