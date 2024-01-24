@@ -14,7 +14,7 @@
           class="item"
         >
           <div class="content">
-            <h2 class="title">{{ i.title }}</h2>
+            <h2 class="mb-6">{{ i.title }}</h2>
             <p class="description">{{ i.description }}</p>
             <button class="whiteButton">Shop here</button>
           </div>
@@ -118,16 +118,16 @@ function activate(direction: string) {
   }
 
   &:nth-child(3) {
-    left: 55%;
+    left: 50%;
   }
   &:nth-child(4) {
-    left: calc(55% + 220px);
+    left: calc(50% + 220px);
   }
   &:nth-child(5) {
-    left: calc(55% + 440px);
+    left: calc(50% + 440px);
   }
   &:nth-child(6) {
-    left: calc(55% + 660px);
+    left: calc(50% + 660px);
     opacity: 0;
   }
 }
@@ -171,20 +171,12 @@ section.controller {
   .item {
     width: 130px;
     height: 220px;
-
-    &:nth-child(3) {
-      left: 50%;
-    }
-    &:nth-child(4) {
-      left: calc(50% + 170px);
-    }
-    &:nth-child(5) {
-      left: calc(50% + 340px);
-    }
-    &:nth-child(6) {
-      left: calc(50% + 510px);
-      opacity: 0;
-    }
+  }
+  h2 {
+    font-size: 2.1rem;
+  }
+  .content {
+    width: 100%;
   }
 }
 
@@ -194,18 +186,28 @@ section.controller {
     height: 180px;
 
     &:nth-child(3) {
-      left: 50%;
+      left: 20%;
+      top: 70%;
     }
     &:nth-child(4) {
-      left: calc(50% + 140px);
+      left: calc(100% - 55%);
+      top: 70%;
     }
     &:nth-child(5) {
-      left: calc(50% + 280px);
+      left: calc(100% - 30%);
+      top: 70%;
     }
     &:nth-child(6) {
-      left: calc(50% + 420px);
+      left: calc(100% - 10%);
+      top: 70%;
       opacity: 0;
     }
+  }
+  h2 {
+    font-size: 2.1rem;
+  }
+  .content {
+    width: 100%;
   }
 }
 </style>
