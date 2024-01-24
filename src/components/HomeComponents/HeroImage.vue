@@ -1,7 +1,7 @@
 <template>
   <v-img cover :src="bg" class="heroImage">
     <div class="blur-overlay">
-      <div class="row fill-height">
+      <div class="fill-height text-area">
         <div class="col-12 white-text header-item pt-10">
           <h2 class="animated fadeInUp mb-6">One More Rep</h2>
           <p class="animated delay-1s fadeInUp mb-6 large">
@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import desktopBG from "../../assets/lifting.jpg";
+import desktopBG from "../../assets/cable.jpg";
 import mobileBG from "../../assets/chin-up.jpg";
 import ResponsiveHelper from "../../helper/ResponsiveHelper";
 import { ref, watch } from "vue";
@@ -36,6 +36,9 @@ watch(
 </script>
 
 <style scoped>
+.text-area{
+  justify-content: center;
+}
 @media screen and (max-width: 767px) {
   h2 {
     font-size: 2.5rem;
