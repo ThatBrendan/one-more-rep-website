@@ -1,15 +1,33 @@
 <template>
   <main>
-    <div class="text-center">
+    <div class="details-container">
       <h2>{{ title }} workout plans</h2>
-      <ul>
-        <span>Warm Up:</span>
-        <li v-for="(plan, index) in workoutPlans" :key="index">{{ plan }}</li>
-      </ul>
-      <ul>
-        <span>Warm Up:</span>
-        <li v-for="(plan, index) in workoutPlans" :key="index">{{ plan }}</li>
-      </ul>
+      <div class="row">
+        <div class="col-12 col-lg-6 workout-photo">
+          <img src="../../assets/chin-up.jpg" alt="" />
+        </div>
+        <div class="col-12 col-lg-6">
+          <ul>
+            <span>Warm Up:</span>
+            <li v-for="(plan, index) in workoutPlans" :key="index">
+              {{ plan }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-6 workout-photo">
+          <img src="../../assets/chin-up.jpg" alt="" />
+        </div>
+        <div class="col-12 col-lg-6">
+          <ul>
+            <span>Workout:</span>
+            <li v-for="(plan, index) in workoutPlans" :key="index">
+              {{ plan }}
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </main>
 </template>
@@ -34,3 +52,10 @@ onMounted(() => {
   workoutPlans.value = workoutItem?.["workout-plans"] ?? [];
 });
 </script>
+
+<style scoped>
+.workout-photo img {
+  width: 100%;
+  height: 50%;
+}
+</style>
